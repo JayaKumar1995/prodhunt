@@ -1,0 +1,13 @@
+{{!-- {{outlet}} --}}
+<section class="root">
+    <header class="header">
+        <h5 class="m-0">Producthunt Clone</h5>
+    </header>
+    <main class="main">
+        {{#each this.model as |product|}}
+        {{!--
+        <ProductSummary @product={{product}} /> --}}
+        {{product-summary product = product onProdClick=(action "fetchProdInfo" product.id )}}
+        {{/each}}
+    </main>
+</section>

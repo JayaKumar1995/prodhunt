@@ -1,0 +1,26 @@
+.root {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 64px auto;
+
+    .header {
+        border-bottom: 1px solid;
+        display: flex;
+        align-items: center;
+        padding-inline: 8px;
+        background: #2e2e2e;
+        color: #fff;
+    }
+
+    .main {
+        grid-template-rows: max-content;
+        padding: 8px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+} 
+
+body {
+    margin: 0;
+}

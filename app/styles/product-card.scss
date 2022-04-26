@@ -2,9 +2,10 @@
     height: 200px;
     border-radius: 6px;
     box-shadow: 10px 16px 80px -43px rgba(0, 0, 0, 0.75);
-    padding: 6px;
+    padding: 24px;
     display: grid;
     grid-template-columns: auto 100px;
+    border: 1px solid #e3dfdf;
 }
 
 .comment {

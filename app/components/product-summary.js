@@ -4,6 +4,9 @@ export default Ember.Component.extend({
     actions: {
         onClick() {
             this.get('onProdClick')();
-        }   
+        },
+        onUpVote() {
+            this.get('onVote')();
+        }
     }
 });

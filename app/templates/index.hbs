@@ -1,13 +1,15 @@
-{{!-- {{outlet}} --}}
 <section class="root">
     <header class="header">
         <h5 class="m-0">Producthunt Clone</h5>
+        {{input value=name }}
+        {{input value=description }}
+        <button {{action "addProduct" name description}}>Add</button>
     </header>
     <main class="main">
         {{#each this.model as |product|}}
-        {{!--
-        <ProductSummary @product={{product}} /> --}}
-        {{product-summary product = product onProdClick=(action "fetchProdInfo" product.id )}}
+        {{product-summary product = product onProdClick=(action "fetchProdInfo" product.id )
+        onVote=(action "updateVote" product.id )
+        }}
         {{/each}}
     </main>
 </section>

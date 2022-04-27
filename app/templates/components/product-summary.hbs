@@ -1,10 +1,13 @@
-<article class="product" {{action "onClick" }}>
+<article class="product">
     <div>
-    <div class="prod-info" style="font-size: 18px">{{product.name}}</div>
-    <div class="prod-info" style="margin-block: 15px;">{{product.description}}</div>
-    <div class="prod-info" style="margin-block: 15px;">{{product.comments.length}} comment(s)</div>
+        <div class="prod-name">{{product.name}}</div>
+        <div class="prod-desc">{{product.description}}</div>
+        <div class="prod-comments" {{action "onClick" }}> <i class="fa fa-comment"></i> {{product.comments.length}}
+            comment(s)
+        </div>
     </div>
     <div class="prod-fav">
+        <i class="fa fa-thumbs-up cursor-pointer" aria-hidden="true" {{action "onUpVote" }}></i>
         {{product.upvotes}} upvotes
     </div>
 </article>

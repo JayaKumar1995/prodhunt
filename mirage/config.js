@@ -9,10 +9,24 @@ export default function () {
 
   this.get('/products/:id', (schema, request) => {
     const { id } = request['params'];
-    console.log(schema.products.find(id));
     return {
       product: schema.products.find(id)
     }
+  });
+
+  this.put('/products/:id', function (schema, request) {
+    const { id } = request['params'];
+    let attrs = this.normalizedRequestAttrs();
+    console.log('sdfasd', attrs);
+    schema.products.find(id).update(attrs);
+    return {
+      product: schema.products.find(id)
+    }
+  });
+
+  this.post('/products', function({ products }, request) {
+    let attrs = this.normalizedRequestAttrs();
+    return products.create(attrs);
   });
 }
 

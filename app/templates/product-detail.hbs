@@ -10,7 +10,7 @@
     <hr>
     <section>
         {{#each  model.comments as |comment|}}
-        <div class="comment">{{comment}}</div>
+        <div class="comment">{{comment?.name}}</div>
         {{/each}}
     </section>
 </article>

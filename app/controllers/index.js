@@ -11,16 +11,15 @@ export default Ember.Controller.extend({
                 name,
                 description,
                 upvotes: Math.round(Math.random() * 100),
-                comments: []
+                comments: [1]
             });
             post.save();
         },
-        updateVote: function (id) {
-            this.get('store').findRecord('product', id).then(function (prod) {
-                prod.get('upvotes'); // => "Rails is Omakase"
-                prod.set('upvotes', prod.get('upvotes') + 1);
-                prod.save(); // => PATCH to '/posts/1'
-            });
+        updateVote: async function (id) {
+            const prod = await this.get('store').findRecord('product', id);
+            prod.get('upvotes'); // => "Rails is Omakase"
+            prod.set('upvotes', prod.get('upvotes') + 1);
+            prod.save(); // => PATCH to '/posts/1'
         }
     }
 });

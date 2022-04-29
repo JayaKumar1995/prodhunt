@@ -13,12 +13,19 @@ export default function () {
       product: schema.products.find(id)
     }
   });
+ 
+  this.get('/comments/:id', (schema, request) => {
+    const { id } = request['params'];
+    return {
+      comment: schema.comments.find(id)
+    }
+  });
 
   this.put('/products/:id', function (schema, request) {
     const { id } = request['params'];
     let attrs = this.normalizedRequestAttrs();
-    console.log('sdfasd', attrs);
     schema.products.find(id).update(attrs);
+    console.log('asdfasdf', schema.products.find(id));
     return {
       product: schema.products.find(id)
     }
